@@ -1,6 +1,6 @@
 # _{Application Name}_
 
-#### _{Brief description of application}, {Date of current version}_
+#### _{Brief description of application}, 9/11/2020_
 
 #### By _**{List of contributors}**_
 
