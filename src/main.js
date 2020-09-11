@@ -31,5 +31,14 @@ $(document).ready(function() {
     }, function (error) {
       $(`#output`).text(`There was an error processing your request: ${error}`);
     });
+
+    let field = $().val();
+    if (sessionStorage.getItem("autosave")) {
+      field.value = sessionStorage.getItem("");
+    }
+
+    field.addEventListener("change", function() {
+      sessionStorage.setItem("autosave", field.value);
+    })
   });
 });
