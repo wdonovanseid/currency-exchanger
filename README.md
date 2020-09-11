@@ -28,7 +28,10 @@ _If you have any questions or concerns, please feel free to contact me at wdstwo
 
 ## Technologies Used
 
-_{Tell me about the languages and tools you used to create this app. Assume that I know you probably used HTML and CSS. If you did something really cool using only HTML, point that out.}_
+* _HTML_
+* _CSS_
+* _JavaScript_
+* _ExchangeRate-API_
 
 ### License
 

@@ -21,7 +21,7 @@ export function getConversionRates(response,currencyTo,dollars) {
   let output;
   conversionRateCodes.forEach(function(code) {
     if (currencyTo === code) {
-      output = dollars * response.conversion_rates[code]
+      output = dollars * response.conversion_rates[code];
     }
   });
   return output;
