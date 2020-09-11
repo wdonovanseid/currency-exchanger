@@ -26,12 +26,3 @@ export function getConversionRates(response,currencyTo,dollars) {
   });
   return output;
 }
-
-// let field = $().val();
-//     if (sessionStorage.getItem("autosave")) {
-//       field.value = sessionStorage.getItem("");
-//     }
-
-//     field.addEventListener("change", function() {
-//       sessionStorage.setItem("autosave", field.value);
-//     });
