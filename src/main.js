@@ -6,7 +6,7 @@ import './css/styles.css';
 $(document).ready(function() {
   $("form#exchange").submit(function(event) {
     event.preventDefault();
-    const dollar = parseInt($(`#amount`).val());
+    const dollars = parseInt($(`#amount`).val());
     const currencyFrom = $(`#currency-from`).val();
     const currencyTo = $(`#currency-to`).val();
 
@@ -27,30 +27,30 @@ $(document).ready(function() {
       let output;
       switch (currencyTo) {
         case "USD":
-          output = dollar * response.conversion_rates.USD;
+          output = dollars * response.conversion_rates.USD;
           break;
         case "AUD":
-          output = dollar * response.conversion_rates.AUD;
+          output = dollars * response.conversion_rates.AUD;
           break;
         case "BGN":
-          output = dollar * response.conversion_rates.BGN;
+          output = dollars * response.conversion_rates.BGN;
           break;
         case "CAD":
-          output = dollar * response.conversion_rates.CAD;
+          output = dollars * response.conversion_rates.CAD;
           break;
         case "CHF":
-          output = dollar * response.conversion_rates.CHF;
+          output = dollars * response.conversion_rates.CHF;
           break;
         case "CNY":
-          output = dollar * response.conversion_rates.CNY;
+          output = dollars * response.conversion_rates.CNY;
           break;
         case "EGP":
-          output = dollar * response.conversion_rates.EGP;
+          output = dollars * response.conversion_rates.EGP;
           break;
         case "EUR":
-          output = dollar * response.conversion_rates.EUR;
+          output = dollars * response.conversion_rates.EUR;
       }
-      $("#output").text(`${output}`);
+      $("#output").text(`${dollars} ${currencyFrom} is ${output} ${currencyTo}`);
     }
   });
 });
