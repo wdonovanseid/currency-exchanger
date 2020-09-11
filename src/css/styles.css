@@ -19,3 +19,7 @@ body {
   padding: 24px;
   margin-bottom: 10px;
 }
+
+#meh {
+  display: none;
+}

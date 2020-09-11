@@ -18,6 +18,7 @@ $(document).ready(function() {
     const currencyFrom = $(`#currency-from`).val();
     const currencyTo = $(`#currency-to`).val();
     clearFields();
+    $("#meh").show();
 
     let promise = ExchangeRate.getExchangeRate(currencyFrom);
     promise.then(function(response) {
