@@ -24,7 +24,7 @@ _There are no known bugs at this time._
 
 ## Support and contact details
 
-_{Let people know what to do if they run into any issues or have questions, ideas or concerns.  Encourage them to contact you or make a contribution to the code.}_
+_If you have any questions or concerns, please feel free to contact me at wdstwo@live.com_
 
 ## Technologies Used
 
@@ -34,4 +34,4 @@ _{Tell me about the languages and tools you used to create this app. Assume that
 
 This software is licensed under the MIT license.
 
-Copyright (c) 2020 **_{List of contributors or company name}_**
+Copyright (c) 2020 **_William Donovan-Seid_**

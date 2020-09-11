@@ -17,31 +17,21 @@ export class ExchangeRate {
 }
 
 export function getConversionRates(response,currencyTo,dollars) {
+  const conversionRateCodes = Object.keys(response.conversion_rates);
   let output;
-  switch (currencyTo) {
-  case "USD":
-    output = dollars * response.conversion_rates.USD;
-    break;
-  case "AUD":
-    output = dollars * response.conversion_rates.AUD;
-    break;
-  case "BGN":
-    output = dollars * response.conversion_rates.BGN;
-    break;
-  case "CAD":
-    output = dollars * response.conversion_rates.CAD;
-    break;
-  case "CHF":
-    output = dollars * response.conversion_rates.CHF;
-    break;
-  case "CNY":
-    output = dollars * response.conversion_rates.CNY;
-    break;
-  case "EGP":
-    output = dollars * response.conversion_rates.EGP;
-    break;
-  case "EUR":
-    output = dollars * response.conversion_rates.EUR;
-  }
+  conversionRateCodes.forEach(function(code) {
+    if (currencyTo === code) {
+      output = dollars * response.conversion_rates[code]
+    }
+  });
   return output;
 }
+
+// let field = $().val();
+//     if (sessionStorage.getItem("autosave")) {
+//       field.value = sessionStorage.getItem("");
+//     }
+
+//     field.addEventListener("change", function() {
+//       sessionStorage.setItem("autosave", field.value);
+//     });
