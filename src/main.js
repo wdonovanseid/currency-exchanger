@@ -9,6 +9,7 @@ function clearFields() {
   $(`#amount`).val("");
   $(`#currency-from`).val("");
   $(`#currency-to`).val("");
+  $(`#showError`).hide();
 }
 
 $(document).ready(function() {
@@ -25,7 +26,9 @@ $(document).ready(function() {
       const output = getConversionRates(exchangeAPI,currencyTo,dollars);
       $("#output").text(`${dollars} ${currencyFrom} is ${output} ${currencyTo}`);
     }, function (error) {
-      $('.showErrors').text(`There was an error processing your request: ${error}`);
+      const whatError = JSON.parse(error);
+      $("#showError").show();
+      $('#showError').text(`There was an error processing your request: ${whatError.error_type}`);
     });
   });
 });
