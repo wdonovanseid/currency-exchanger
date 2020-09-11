@@ -1,12 +1,12 @@
-# _{Application Name}_
+# _Currency Exchanger_
 
-#### _{Brief description of application}, 9/11/2020_
+#### _Epicodus Project Currency Exchanger, 9/11/2020_
 
-#### By _**{List of contributors}**_
+#### By _**William Donovan-Seid**_
 
 ## Description
 
-_{This is a detailed description of your application. Its purpose and usage.  Give as much detail as needed to explain what the application does, and any other information you want users or other developers to have. }_
+_This is an Epicodus Project in using Asynchrony, API's, Promises to create an application where a user can type in an amount, the amounts currency, and then choose which currency it should be converted to (such as francs, marks, rupees, and so on)._
 
 ## Setup/Installation Requirements
 

@@ -9,7 +9,6 @@ function clearFields() {
   $(`#amount`).val("");
   $(`#currency-from`).val("");
   $(`#currency-to`).val("");
-  $(`#showError`).hide();
 }
 
 $(document).ready(function() {
@@ -23,12 +22,14 @@ $(document).ready(function() {
     let promise = ExchangeRate.getExchangeRate(currencyFrom);
     promise.then(function(response) {
       const exchangeAPI = JSON.parse(response);
-      const output = getConversionRates(exchangeAPI,currencyTo,dollars);
-      $("#output").text(`${dollars} ${currencyFrom} is ${output} ${currencyTo}`);
+      if (exchangeAPI.result === "error") {
+        $("#output").text(`There was an error processing your request: ${exchangeAPI.error-type}`);
+      } else {
+        const newDollars = getConversionRates(exchangeAPI,currencyTo,dollars);
+        $("#output").text(`${dollars} ${currencyFrom} is ${newDollars} ${currencyTo}`);
+      }
     }, function (error) {
-      const whatError = JSON.parse(error);
-      $("#showError").show();
-      $('#showError').text(`There was an error processing your request: ${whatError.error_type}`);
+      $(`#output`).text(`There was an error processing your request: ${error}`);
     });
   });
 });
