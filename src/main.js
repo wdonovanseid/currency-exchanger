@@ -23,7 +23,7 @@ $(document).ready(function() {
     promise.then(function(response) {
       const exchangeAPI = JSON.parse(response);
       if (exchangeAPI.result === "error") {
-        $("#output").text(`There was an error processing your request: ${exchangeAPI.error-type}`);
+        $("#output").text(`There was an error processing your request: ${exchangeAPI['error-type']}`);
       } else {
         const newDollars = getConversionRates(exchangeAPI,currencyTo,dollars);
         $("#output").text(`${dollars} ${currencyFrom} is ${newDollars} ${currencyTo}`);
