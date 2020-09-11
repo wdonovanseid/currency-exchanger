@@ -2,6 +2,13 @@ import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
+import {ExchangeRate} from './js/exchange-api.js';
+
+function clearFields() {
+  $(`#amount`).val("");
+  $(`#currency-from`).val("");
+  $(`#currency-to`).val("");
+}
 
 $(document).ready(function() {
   $("form#exchange").submit(function(event) {
@@ -9,6 +16,15 @@ $(document).ready(function() {
     const dollars = parseInt($(`#amount`).val());
     const currencyFrom = $(`#currency-from`).val();
     const currencyTo = $(`#currency-to`).val();
+    clearFields();
+
+    let promise = ExchangeRate.getExchangeRate(currencyFrom)
+    promise.then(function(response) {
+      const body = JSON.parse(response);
+      
+    }, function (error) {
+      $('.showErrors').text(`There was an error processing your request: ${error}`);
+    });
 
     let request = new XMLHttpRequest();
     const url = `https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/latest/${currencyFrom}`;
@@ -16,14 +32,15 @@ $(document).ready(function() {
     request.onreadystatechange = function() {
       if (this.readyState === 4 && this.status === 200) {
         const response = JSON.parse(this.responseText);
-        getElements(response);
+        getConversionRates(response);
       }
     };
 
     request.open("GET", url, true);
     request.send();
 
-    function getElements(response) {
+    function getConversionRates(response) {
+      console.log(response.conversion_rates.ASDFDSD)
       let output;
       switch (currencyTo) {
         case "USD":
