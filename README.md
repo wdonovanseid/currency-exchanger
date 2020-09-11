@@ -13,8 +13,8 @@ _This is an Epicodus Project in using Asynchrony, API's, Promises to create an a
 * _Copy Repository_
 * _Go to https://www.exchangerate-api.com/ and get a free API key_
 * _Make a .env file in the root directory of the repository_
-* _Type in "API_KEY=YOUR-API-KEY" (YOUR-API-KEY being the free API key you got)
-* _Npm run start in your terminal_
+* _Type in "API_KEY=YOUR-API-KEY" into the .env file (YOUR-API-KEY being the free API key you got)_
+* _Type "Npm run start" in your terminal_
 
 ## Known Bugs
 
