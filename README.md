@@ -10,13 +10,11 @@ _This is an Epicodus Project in using Asynchrony, API's, Promises to create an a
 
 ## Setup/Installation Requirements
 
-* _This is a great place_
-* _to list setup instructions_
-* _in a simple_
-* _easy-to-understand_
-* _format_
-
-_{Leave nothing to chance! You want it to be easy for potential users, employers and collaborators to run your app. Do I need to run a server? How should I set up my databases? Is there other code this app depends on?}_
+* _Copy Repository_
+* _Go to https://www.exchangerate-api.com/ and get a free API key_
+* _Make a .env file in the root directory of the repository_
+* _Type in "API_KEY=YOUR-API-KEY" (YOUR-API-KEY being the free API key you got)
+* _Npm run start in your terminal_
 
 ## Known Bugs
 
